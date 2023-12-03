@@ -138,10 +138,12 @@
     background-color: var(--color-primary);
     transform: scaleY(0);
     // transform-origin: bottom;
-    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color .1s;
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
   }
 
-  &__item:hover::before, &__item--active::before {
+  &__item:hover::before,
+  &__item--active::before {
     transform: scaleY(1);
     width: 100%;
   }
@@ -179,4 +181,131 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+}
+
+////////////////////////////////////////////////////
+/// GALLERY
+.gallery {
+  display: flex;
+
+  &__photo {
+    width: 100%;
+    display: block; // prevents images from having a small space, which
+    // could happen if left as an inline element.
+  }
+}
+
+////////////////////////////////////////////////////
+/// HOTEL OVERVIEW
+.overview {
+  display: flex;
+  border-bottom: 1px solid var(--color-grey-light-2);
+  align-items: center;
+
+  // justify-content: space-between; // evenly distributes space among all elements in the main axis. [Not what we wanted]
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    // flex-grow: 1; // NOTE: Experiment and see the differences between this and margin right auto.
+    margin-right: auto; // NOTE: margin-left: auto, on the location class would have worked as well.
+
+    display: flex; // alternative was to set font-size and line height to 0, this is to remove extra space
+    // around star icons, the space is there because by default it acts as a inline-element which in turn
+    // also behaves a bit like a text element which has extra space because font-size and text.
+    // Can also experiment doing this with the dev tools.
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__icon-location {
+    margin-right: .5rem;
+
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__rating {
+    background-color: var(--color-primary);
+    color: white;
+    margin-left: 3rem;
+    padding: 0 2.25rem;
+    align-self: stretch;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-average {
+      font-size: 2.25rem;
+      font-weight: 300;
+      margin-bottom: -3px;
+    }
+  
+    &-count {
+      font-size: .8rem;
+      text-transform: uppercase;
+    }
+
+  }
+
+
+}
+
+////////////////////////////////////////////////////
+/// BUTTON INLINE
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  background-color: transparent;
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.2s;
+  display: inline-block;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+////////////////////////////////////////////////////
+/// ANIMATION
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
 }
