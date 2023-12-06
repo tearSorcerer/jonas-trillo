@@ -13,6 +13,12 @@
   justify-content: center;
   align-items: center;
 
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-3);
+  }
+
   &__input:focus + &__button {
     background-color: var(--color-grey-light-3);
   }
@@ -125,7 +131,6 @@
     margin: 0;
   }
 
-
   &__item {
     position: relative;
 
@@ -140,6 +145,7 @@
     @media only screen and (max-width: $bp-medium) { // remember this is dependent on 
       flex: 1;
     }
+  
   }
 
   &__item::before {
@@ -185,6 +191,13 @@
       justify-content: center;
       padding: 2rem;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: .7rem;
+      flex-direction: column;
+      padding: 1.5rem .5rem;
+    }
   }
 
   &__icon {
@@ -192,6 +205,12 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; // is the color of either the current element or the parent element.
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -235,6 +254,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -280,11 +304,23 @@
       font-size: 2.25rem;
       font-weight: 300;
       margin-bottom: -3px;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 1.8rem;
+      }
     }
 
     &-count {
       font-size: 0.8rem;
       text-transform: uppercase;
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: .5rem;
+      }
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
     }
   }
 }
