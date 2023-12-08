@@ -70,6 +70,7 @@
 ////////////////////////////////////////////////////
 /// USER NAVIGATION
 .user-nav {
+  position: relative;
   display: flex;
   align-self: stretch;
   align-items: center;
@@ -117,6 +118,54 @@
     height: 3.75rem;
     border-radius: 50%;
     margin-right: 1rem;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 95%;
+    right: 0;
+    width: 15rem;
+    border-radius: 3px;
+    display: none;
+    box-shadow: var(--shadow-dark);
+  }
+
+  &__user:hover &__menu,
+  &__menu:hover {
+    text-transform: uppercase;
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    background-color: var(--color-primary);
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__list:hover {
+
+  }
+
+  &__item {
+    padding: 1rem 2rem;
+    width: 100%;
+
+    &-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: whitesmoke;
+    }
+
+    &-text {
+      text-align: center;
+      border-bottom: 1px solid whitesmoke;
+      margin-left: 1rem;
+    }
+  }
+
+  &__item:hover {
+    background-color: var(--color-primary-light);
   }
 }
 //////////////////////////////////////////////////////////////////////////////////////////

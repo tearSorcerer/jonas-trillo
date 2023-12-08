@@ -13,6 +13,7 @@
 
     <title>trillo &mdash; Your all-in-one booking app</title>
   </head>
+
   <body>
     <div class="container">
       <header class="header">
@@ -48,9 +49,48 @@
           <div class="user-nav__user">
             <img src="img/user.jpg" alt="User" class="user-nav__user-photo" />
             <span class="user-nav__user-name">Jonas</span>
+            <div class="user-nav__menu">
+              <ul class="user-nav__list">
+                <li class="user-nav__item">
+                  <svg class="user-nav__item-icon">
+                    <use xlink:href="img/sprite2.svg#icon-cog"></use>
+                  </svg>
+
+                  <span class="user-nav__item-text">Settings</span>
+                </li>
+                <li class="user-nav__item">
+                  <svg class="user-nav__item-icon">
+                    <use xlink:href="img/sprite2.svg#icon-credit"></use>
+                  </svg>
+                  <span class="user-nav__item-text">Credit</span>
+                </li>
+                <li class="user-nav__item">
+                  <svg class="user-nav__item-icon">
+                    <use xlink:href="img/sprite2.svg#icon-key"></use>
+                  </svg>
+
+                  <span class="user-nav__item-text">Security</span>
+                </li>
+                <li class="user-nav__item">
+                  <svg class="user-nav__item-icon">
+                    <use xlink:href="img/sprite2.svg#icon-rocket"></use>
+                  </svg>
+
+                  <span class="user-nav__item-text">New</span>
+                </li>
+                <li class="user-nav__item">
+                  <svg class="user-nav__item-icon">
+                    <use xlink:href="img/sprite2.svg#icon-paper-plane"></use>
+                  </svg>
+
+                  <span class="user-nav__item-text">Feedback</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </header>
+
       <!-- home, flight, key, map -->
       <div class="content">
         <nav class="sidebar">
