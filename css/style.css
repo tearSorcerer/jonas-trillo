@@ -202,7 +202,8 @@ body {
       align-items: center;
       margin-left: auto;
       color: var(--color-white);
-      font-weight: bold; }
+      font-weight: bold;
+      font-size: 3rem; }
   .search__input:focus + .search__menu, .search__menu:hover {
     display: block; }
   .search__button {
