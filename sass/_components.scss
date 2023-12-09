@@ -54,6 +54,7 @@
     position: absolute;
     top: 100%;
     border-radius: 3rem;
+    z-index: var(--z-hover-menu);
   }
 
   &__list {
@@ -97,7 +98,6 @@
       // justify-content: flex-start;
       align-items: flex-start;
       justify-content: center;
-      
     }
 
     &-name {
@@ -183,6 +183,7 @@
     background-color: var(--color-primary-dark);
     color: white;
     width: var(--hm-width);
+    z-index: var(--z-hover-menu);
 
     &-heading {
       padding: 1rem 1.5rem;
@@ -258,6 +259,7 @@
     border-radius: 3px;
     display: none;
     box-shadow: var(--shadow-dark);
+    z-index: var(--z-hover-menu);
   }
 
   &__user:hover &__menu,
@@ -434,7 +436,47 @@
     width: 100%;
     display: block; // prevents images from having a small space, which
     // could happen if left as an inline element.
+    transition: transform .5s;
   }
+
+  &__item:hover &__photo {
+    transform: scale(1.05);
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+
+    &:hover &-caption {
+      opacity: 1;
+      transform: translateY(-10rem);
+    }
+
+    &-caption {
+      position: absolute;
+      top: 85%;
+      left: 0%;
+
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      font-size: 2rem;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      margin-top: 10rem;
+      opacity: 0;
+      transition: transform .5s, opacity 1s, scale .5s;
+    }
+  }
+
+
+  // &__item-caption {
+  //   position: absolute;
+  //   background-color: var(--color-primary);
+  //   height: 1rem;
+  //   width: 33%;
+  // }
 }
 
 ////////////////////////////////////////////////////
