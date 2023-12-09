@@ -9,6 +9,7 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
+  --color-white: #fff;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light:  0 2rem 5rem rgba(0, 0, 0, 0.06);
   --line: 1px solid var(--color-grey-light-2);
@@ -129,7 +130,8 @@ body {
   flex: 0 0 40%;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
   @media only screen and (max-width: 31.25em) {
     .search {
       order: 1;
@@ -155,6 +157,54 @@ body {
     .search__input::-webkit-input-placeholder {
       font-weight: 100;
       color: var(--color-grey-light-4); }
+  .search__menu {
+    display: none;
+    width: 90%;
+    position: absolute;
+    top: 100%;
+    border-radius: 3rem; }
+  .search__list {
+    list-style: none;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border-radius: 2rem; }
+    .search__list:not(:last-child) {
+      margin-top: 1rem; }
+  .search__item {
+    display: flex;
+    align-content: space-between;
+    padding: 1rem 2rem; }
+    .search__item:hover {
+      background-color: var(--color-primary-light); }
+    .search__item-photo {
+      display: flex;
+      justify-content: flex-start;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%; }
+    .search__item-info-container {
+      display: flex;
+      margin-left: 2rem; }
+    .search__item-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center; }
+    .search__item-name {
+      letter-spacing: 2px;
+      font-weight: 400; }
+    .search__item-location {
+      font-weight: 200; }
+    .search__item-rating {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      color: var(--color-white);
+      font-weight: bold; }
+  .search__input:focus + .search__menu, .search__menu:hover {
+    display: block; }
   .search__button {
     border: none;
     background-color: var(--color-grey-light-2); }
@@ -202,7 +252,7 @@ body {
       display: flex;
       letter-spacing: 3px;
       justify-content: space-between;
-      padding: .5rem .75rem; }
+      padding: 0.5rem 0.75rem; }
     .user-nav__messages-item-content::before {
       content: " ";
       display: inline-block;
@@ -267,7 +317,7 @@ body {
     .user-nav__item::after {
       content: "___yo";
       margin-left: auto;
-      font-size: .8rem;
+      font-size: 0.8rem;
       background-color: white;
       mask-image: url(../img/chevron-thin-right.svg);
       mask-size: cover; }

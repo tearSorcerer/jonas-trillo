@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   @media only screen and (max-width: $bp-smallest) {
     order: 1;
@@ -45,6 +46,81 @@
       font-weight: 100;
       color: var(--color-grey-light-4);
     }
+  }
+
+  &__menu {
+    display: none;
+    width: 90%;
+    position: absolute;
+    top: 100%;
+    border-radius: 3rem;
+  }
+
+  &__list {
+    list-style: none;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border-radius: 2rem;
+
+    &:not(:last-child) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-content: space-between;
+    padding: 1rem 2rem;
+
+    &:hover {
+      background-color: var(--color-primary-light);
+    }
+
+    &-photo {
+      display: flex;
+      justify-content: flex-start;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+    }
+
+    &-info-container {
+      display: flex;
+      margin-left: 2rem;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      // justify-content: flex-start;
+      align-items: flex-start;
+      justify-content: center;
+      
+    }
+
+    &-name {
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
+
+    &-location {
+      font-weight: 200;
+    }
+
+    &-rating {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      color: var(--color-white);
+      font-weight: bold;
+    }
+  }
+
+  &__input:focus + &__menu,
+  &__menu:hover {
+    display: block;
   }
 
   &__button {
@@ -92,7 +168,9 @@
     position: relative;
   }
 
-  &__icon-box:hover &__messages, &__messages{ // if parent highlight then select child
+  &__icon-box:hover &__messages,
+  &__messages {
+    // if parent highlight then select child
     display: block;
   }
 
@@ -124,7 +202,7 @@
         display: flex;
         letter-spacing: 3px;
         justify-content: space-between;
-        padding: .5rem .75rem;
+        padding: 0.5rem 0.75rem;
       }
 
       &-content::before {
@@ -196,7 +274,6 @@
   }
 
   &__list:hover {
-
   }
 
   &__item {
@@ -205,7 +282,7 @@
     font-size: 1.5rem;
 
     display: flex;
-    justify-content: flex-start;    
+    justify-content: flex-start;
 
     &-icon {
       width: 2rem;
@@ -224,7 +301,7 @@
       content: "___yo";
       margin-left: auto;
 
-      font-size: .8rem;
+      font-size: 0.8rem;
       background-color: white;
       mask-image: url(../img/chevron-thin-right.svg);
       mask-size: cover;
@@ -234,8 +311,6 @@
   &__item:hover {
     background-color: var(--color-primary-light);
   }
-
-
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 /// SIDE NAVIGATION
