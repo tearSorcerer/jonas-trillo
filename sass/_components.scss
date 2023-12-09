@@ -92,6 +92,57 @@
     position: relative;
   }
 
+  &__icon-box:hover &__messages, &__messages{ // if parent highlight then select child
+    display: block;
+  }
+
+  &__messages {
+    display: none;
+    position: absolute;
+    top: 95%;
+    left: -104%;
+    background-color: var(--color-primary-dark);
+    color: white;
+    width: var(--hm-width);
+
+    &-heading {
+      padding: 1rem 1.5rem;
+    }
+
+    &-item {
+      // border-bottom: 1px solid var(--color-primary-dark);
+
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+
+      &:hover {
+        background-color: var(--color-primary-light);
+      }
+
+      &-sender {
+        display: flex;
+        letter-spacing: 3px;
+        justify-content: space-between;
+        padding: .5rem .75rem;
+      }
+
+      &-content::before {
+        content: " ";
+        display: inline-block;
+        width: 1rem;
+      }
+
+      &-content {
+        display: block;
+        // max-width: 15rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
   &__icon {
     height: 2.25rem;
     width: 2.25rem;
@@ -124,7 +175,7 @@
     position: absolute;
     top: 95%;
     right: 0;
-    width: 15rem;
+    width: var(--hm-width);
     border-radius: 3px;
     display: none;
     box-shadow: var(--shadow-dark);
@@ -132,11 +183,12 @@
 
   &__user:hover &__menu,
   &__menu:hover {
+    letter-spacing: 1px;
     text-transform: uppercase;
     display: block;
     color: white;
-    font-size: 1.5rem;
-    background-color: var(--color-primary);
+    font-size: 1.3rem;
+    background-color: var(--color-primary-dark);
   }
 
   &__list {
@@ -150,10 +202,15 @@
   &__item {
     padding: 1rem 2rem;
     width: 100%;
+    font-size: 1.5rem;
+
+    display: flex;
+    justify-content: flex-start;    
 
     &-icon {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
+
       fill: whitesmoke;
     }
 
@@ -162,11 +219,23 @@
       border-bottom: 1px solid whitesmoke;
       margin-left: 1rem;
     }
+
+    &::after {
+      content: "___yo";
+      margin-left: auto;
+
+      font-size: .8rem;
+      background-color: white;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+    }
   }
 
   &__item:hover {
     background-color: var(--color-primary-light);
   }
+
+
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 /// SIDE NAVIGATION

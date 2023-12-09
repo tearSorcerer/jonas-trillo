@@ -11,7 +11,8 @@
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light:  0 2rem 5rem rgba(0, 0, 0, 0.06);
-  --line: 1px solid var(--color-grey-light-2); }
+  --line: 1px solid var(--color-grey-light-2);
+  --hm-width: 25rem; }
 
 * {
   margin: 0;
@@ -181,6 +182,36 @@ body {
     background-color: var(--color-grey-light-2); }
   .user-nav__icon-box {
     position: relative; }
+  .user-nav__icon-box:hover .user-nav__messages, .user-nav__messages {
+    display: block; }
+  .user-nav__messages {
+    display: none;
+    position: absolute;
+    top: 95%;
+    left: -104%;
+    background-color: var(--color-primary-dark);
+    color: white;
+    width: var(--hm-width); }
+    .user-nav__messages-heading {
+      padding: 1rem 1.5rem; }
+    .user-nav__messages-item:not(:first-child) {
+      margin-top: 2rem; }
+    .user-nav__messages-item:hover {
+      background-color: var(--color-primary-light); }
+    .user-nav__messages-item-sender {
+      display: flex;
+      letter-spacing: 3px;
+      justify-content: space-between;
+      padding: .5rem .75rem; }
+    .user-nav__messages-item-content::before {
+      content: " ";
+      display: inline-block;
+      width: 1rem; }
+    .user-nav__messages-item-content {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;
@@ -206,29 +237,40 @@ body {
     position: absolute;
     top: 95%;
     right: 0;
-    width: 15rem;
+    width: var(--hm-width);
     border-radius: 3px;
     display: none;
     box-shadow: var(--shadow-dark); }
   .user-nav__user:hover .user-nav__menu, .user-nav__menu:hover {
+    letter-spacing: 1px;
     text-transform: uppercase;
     display: block;
     color: white;
-    font-size: 1.5rem;
-    background-color: var(--color-primary); }
+    font-size: 1.3rem;
+    background-color: var(--color-primary-dark); }
   .user-nav__list {
     list-style: none; }
   .user-nav__item {
     padding: 1rem 2rem;
-    width: 100%; }
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start; }
     .user-nav__item-icon {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       fill: whitesmoke; }
     .user-nav__item-text {
       text-align: center;
       border-bottom: 1px solid whitesmoke;
       margin-left: 1rem; }
+    .user-nav__item::after {
+      content: "___yo";
+      margin-left: auto;
+      font-size: .8rem;
+      background-color: white;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover; }
   .user-nav__item:hover {
     background-color: var(--color-primary-light); }
 
