@@ -77,6 +77,10 @@
   @media only screen and (max-width: $bp-small) {
     flex-direction: column;
   }
+
+  @media only screen and (max-width: $bp-even-smaller) {
+    padding: 0;
+  }
 }
 
 .description {
@@ -96,6 +100,8 @@
     margin-right: 0;
     margin-bottom: 3rem;
   }
+
+
 }
 
 .user-reviews {

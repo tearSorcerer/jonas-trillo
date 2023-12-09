@@ -100,6 +100,9 @@ body {
   @media only screen and (max-width: 37.5em) {
     .detail {
       flex-direction: column; } }
+  @media only screen and (max-width: 25em) {
+    .detail {
+      padding: 0; } }
 
 .description {
   font-size: 1.4rem;
@@ -165,6 +168,9 @@ body {
     top: 100%;
     border-radius: 3rem;
     z-index: var(--z-hover-menu); }
+    @media only screen and (max-width: 56.25em) {
+      .search__menu {
+        width: 100%; } }
   .search__list {
     list-style: none;
     width: 100%;
@@ -172,12 +178,18 @@ body {
     background-color: var(--color-primary-dark);
     color: var(--color-white);
     border-radius: 2rem; }
+    @media only screen and (max-width: 56.25em) {
+      .search__list {
+        padding: 0; } }
     .search__list:not(:last-child) {
       margin-top: 1rem; }
   .search__item {
     display: flex;
     align-content: space-between;
     padding: 1rem 2rem; }
+    @media only screen and (max-width: 56.25em) {
+      .search__item {
+        width: 100%; } }
     .search__item:hover {
       background-color: var(--color-primary-light); }
     .search__item-photo {
@@ -186,9 +198,20 @@ body {
       width: 8rem;
       height: 8rem;
       border-radius: 50%; }
+      @media only screen and (max-width: 56.25em) {
+        .search__item-photo {
+          width: 5rem;
+          height: 5rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .search__item-photo {
+          width: 3rem;
+          height: 3rem; } }
     .search__item-info-container {
       display: flex;
       margin-left: 2rem; }
+      @media only screen and (max-width: 37.5em) {
+        .search__item-info-container {
+          margin-right: 1rem; } }
     .search__item-info {
       display: flex;
       flex-direction: column;
@@ -202,10 +225,17 @@ body {
     .search__item-rating {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       margin-left: auto;
       color: var(--color-white);
       font-weight: bold;
       font-size: 3rem; }
+      @media only screen and (max-width: 56.25em) {
+        .search__item-rating {
+          font-size: 1.5rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .search__item-rating {
+          font-size: 1rem; } }
   .search__input:focus + .search__menu, .search__menu:hover {
     display: block; }
   .search__button {
@@ -430,6 +460,15 @@ body {
       margin-top: 10rem;
       opacity: 0;
       transition: transform .5s, opacity 1s, scale .5s; }
+      @media only screen and (max-width: 56.25em) {
+        .gallery__item-caption {
+          font-size: 1.25rem; } }
+      @media only screen and (max-width: 31.25em) {
+        .gallery__item-caption {
+          font-size: .85rem; } }
+      @media only screen and (max-width: 25em) {
+        .gallery__item-caption {
+          font-size: .6rem; } }
 
 .overview {
   display: flex;
